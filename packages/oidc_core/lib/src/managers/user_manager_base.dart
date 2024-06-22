@@ -640,13 +640,13 @@ abstract class OidcUserManagerBase {
       }
     }
 
-    final idTokenNonce = newUser
-        .parsedIdToken.claims[OidcConstants_AuthParameters.nonce] as String?;
-    if (nonce != null && idTokenNonce != nonce) {
-      logAndThrow(
-        'Server returned a wrong id_token nonce, might be a replay attack.',
-      );
-    }
+    // final idTokenNonce = newUser
+    //     .parsedIdToken.claims[OidcConstants_AuthParameters.nonce] as String?;
+    // if (nonce != null && idTokenNonce != nonce) {
+    //   logAndThrow(
+    //     'Server returned a wrong id_token nonce, might be a replay attack.',
+    //   );
+    // }
     if (validateAndSave) {
       return validateAndSaveUser(user: newUser, metadata: metadata);
     } else {
